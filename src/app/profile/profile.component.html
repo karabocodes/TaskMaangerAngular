@@ -1,0 +1,85 @@
+<div class="profile-container">
+  <h2>My Profile</h2>
+
+  <div class="profile-content">
+    <form (ngSubmit)="onSubmit()" #profileForm="ngForm" class="profile-info">
+      <h3>Profile Information</h3>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput [(ngModel)]="user.name" name="name" required #nameInput="ngModel">
+        <mat-error *ngIf="nameInput.invalid && (nameInput.dirty || nameInput.touched)">
+          Name is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput [(ngModel)]="user.email" name="email" required email #emailInput="ngModel">
+        <mat-error *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)">
+          <span *ngIf="emailInput.errors?.['required']">Email is required</span>
+          <span *ngIf="emailInput.errors?.['email']">Invalid email format</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Phone Number</mat-label>
+        <input matInput [(ngModel)]="user.phoneNumber" name="phoneNumber" #phoneInput="ngModel">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Address</mat-label>
+        <textarea matInput [(ngModel)]="user.address" name="address" #addressInput="ngModel"></textarea>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="!profileForm.form.valid">Save</button>
+    </form>
+
+    <form (ngSubmit)="onChangePassword()" #passwordForm="ngForm" class="change-password">
+      <h3>Change Password</h3>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Current Password</mat-label>
+        <input matInput [(ngModel)]="currentPassword" name="currentPassword" required 
+               [type]="hideCurrentPassword ? 'password' : 'text'" #currentPasswordInput="ngModel">
+        <button mat-icon-button matSuffix (click)="togglePasswordVisibility('current')" type="button">
+          <mat-icon>{{hideCurrentPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="currentPasswordInput.invalid && (currentPasswordInput.dirty || currentPasswordInput.touched)">
+          Current password is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>New Password</mat-label>
+        <input matInput [(ngModel)]="newPassword" name="newPassword" required minlength="8"
+               pattern="(?=.*[A-Z])(?=.*[0-9])(?=.*[\W_]).{8,}"
+               [type]="hideNewPassword ? 'password' : 'text'" #newPasswordInput="ngModel">
+        <button mat-icon-button matSuffix (click)="togglePasswordVisibility('new')" type="button">
+          <mat-icon>{{hideNewPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="newPasswordInput.invalid && (newPasswordInput.dirty || newPasswordInput.touched)">
+          <span *ngIf="newPasswordInput.errors?.['required']">New password is required</span>
+          <span *ngIf="newPasswordInput.errors?.['minlength']">Password must be at least 8 characters long</span>
+          <span *ngIf="newPasswordInput.errors?.['pattern']">Password must contain an uppercase letter, a number, and a special character</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Confirm New Password</mat-label>
+        <input matInput [(ngModel)]="confirmNewPassword" name="confirmNewPassword" required
+               [type]="hideConfirmPassword ? 'password' : 'text'" #confirmPasswordInput="ngModel">
+        <button mat-icon-button matSuffix (click)="togglePasswordVisibility('confirm')" type="button">
+          <mat-icon>{{hideConfirmPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="confirmPasswordInput.invalid && (confirmPasswordInput.dirty || confirmPasswordInput.touched)">
+          Confirm new password is required
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="!passwordForm.form.valid">Save</button>
+    </form>
+  </div>
+
+  <button mat-raised-button color="warn" (click)="onDeleteAccount()" class="delete-account">Delete Account</button>
+</div>  

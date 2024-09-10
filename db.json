@@ -1,0 +1,168 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "Admin@123",
+      "role": "admin",
+      "email": "admin@example.com"
+    },
+    {
+      "id": "8fa6",
+      "username": "karabo",
+      "email": "k@gmail.com",
+      "password": "Qwerty@1234",
+      "role": "user"
+    },
+    {
+      "id": "7e28",
+      "username": "karabo",
+      "email": "karabo@gmail.com",
+      "password": "Qwerty@1234",
+      "role": "user"
+    },
+    {
+      "id": "512f",
+      "username": "john",
+      "email": "john@g.m",
+      "password": "Qwerty@1234",
+      "role": "user"
+    },
+    {
+      "id": "afbc",
+      "username": "james",
+      "email": "james@example.com",
+      "password": "James@example23",
+      "role": "user"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "1",
+      "userId": 2,
+      "title": "Complete Angular project",
+      "description": "Finish the task manager application",
+      "dueDate": "2024-09-24T00:00:00.000Z",
+      "priority": "high",
+      "status": "in-progress",
+      "categories": []
+    },
+    {
+      "id": "1424",
+      "categories": [],
+      "dueDate": "2024-09-10T00:00:00.000Z",
+      "title": "Food",
+      "description": "plate",
+      "priority": "high",
+      "userId": "c601"
+    },
+    {
+      "id": "3152",
+      "categories": [],
+      "dueDate": "2024-09-25T00:00:00.000Z",
+      "priority": "low",
+      "description": "sd",
+      "title": "asd",
+      "userId": "1"
+    },
+    {
+      "id": "2bc4",
+      "categories": [],
+      "dueDate": null,
+      "priority": "low",
+      "description": "sad",
+      "title": "asd",
+      "userId": "1"
+    },
+    {
+      "id": "94f8",
+      "categories": [],
+      "dueDate": "2024-09-17T00:00:00.000Z",
+      "title": "asd",
+      "description": "asdasd",
+      "priority": "medium",
+      "userId": "1"
+    },
+    {
+      "id": "9252",
+      "categories": [],
+      "dueDate": "2024-09-24T00:00:00.000Z",
+      "priority": "high",
+      "title": "ad",
+      "description": "ad",
+      "userId": "1"
+    },
+    {
+      "id": "a911",
+      "categories": [],
+      "dueDate": "2024-09-30T00:00:00.000Z",
+      "priority": "low",
+      "description": "A",
+      "title": "A",
+      "userId": "1"
+    },
+    {
+      "id": "861b",
+      "categories": [],
+      "dueDate": "2024-09-18T00:00:00.000Z",
+      "title": "d",
+      "description": "a",
+      "priority": "medium",
+      "userId": "8fa6"
+    },
+    {
+      "id": "1e50",
+      "categories": [],
+      "dueDate": "2024-09-20T00:00:00.000Z",
+      "title": "sd",
+      "description": "df",
+      "priority": "high",
+      "userId": "8fa6"
+    },
+    {
+      "id": "7770",
+      "categories": [],
+      "dueDate": "2024-09-24T00:00:00.000Z",
+      "priority": "low",
+      "description": "sdsd",
+      "title": "qde",
+      "userId": "8fa6"
+    },
+    {
+      "id": "a07d",
+      "categories": [],
+      "dueDate": "2024-09-27T00:00:00.000Z",
+      "title": "edfs",
+      "description": "dsfgdb",
+      "priority": "low",
+      "userId": "8fa6"
+    },
+    {
+      "id": "2566",
+      "categories": [],
+      "dueDate": "2024-10-03T00:00:00.000Z",
+      "title": "sdfgdhfnj",
+      "description": "adsfgdh",
+      "priority": "high",
+      "userId": "8fa6"
+    },
+    {
+      "id": "1243",
+      "categories": [],
+      "dueDate": "2024-09-26T00:00:00.000Z",
+      "title": "Mr",
+      "description": "MIsss",
+      "priority": "high",
+      "userId": "8fa6"
+    },
+    {
+      "id": "a3c8",
+      "categories": [],
+      "dueDate": "2024-09-26T00:00:00.000Z",
+      "title": "bass",
+      "description": "john",
+      "priority": "high",
+      "userId": "afbc"
+    }
+  ]
+}

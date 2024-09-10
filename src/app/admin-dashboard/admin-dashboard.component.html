@@ -1,0 +1,89 @@
+<div class="admin-dashboard-container">
+  <h2>Admin Dashboard</h2>
+  <div class="dashboard-cards">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Total Users</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <h3>{{ totalUsers }}</h3>
+      </mat-card-content>
+    </mat-card>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Total Tasks</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <h3>{{ totalTasks }}</h3>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <h3>User List</h3>
+  <table mat-table [dataSource]="users" class="mat-elevation-z8">
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let user"> {{ user.id }} </td>
+    </ng-container>
+
+    <!-- Username Column -->
+    <ng-container matColumnDef="username">
+      <th mat-header-cell *matHeaderCellDef> Username </th>
+      <td mat-cell *matCellDef="let user">
+        <div *ngIf="editingUser?.id === user.id; else usernameView">
+          <input [(ngModel)]="editingUser.username" />
+        </div>
+        <ng-template #usernameView>
+          {{ user.username }}
+        </ng-template>
+      </td>
+    </ng-container>
+
+    <!-- Email Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let user">
+        <div *ngIf="editingUser?.id === user.id; else emailView">
+          <input [(ngModel)]="editingUser.email" />
+        </div>
+        <ng-template #emailView>
+          {{ user.email }}
+        </ng-template>
+      </td>
+    </ng-container>
+
+    <!-- Role Column -->
+    <ng-container matColumnDef="role">
+      <th mat-header-cell *matHeaderCellDef> Role </th>
+      <td mat-cell *matCellDef="let user">
+        <div *ngIf="editingUser?.id === user.id; else roleView">
+          <input [(ngModel)]="editingUser.role" />
+        </div>
+        <ng-template #roleView>
+          {{ user.role }}
+        </ng-template>
+      </td>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let user">
+        <div *ngIf="editingUser?.id === user.id; else actionsView">
+          <button class="save-btn" (click)="saveUser()">Save</button>
+          <button class="cancel-btn" (click)="cancelEditing()">Cancel</button>
+        </div>
+        <ng-template #actionsView>
+          <button class="edit-btn" (click)="startEditing(user)">Edit</button>
+          <button class="delete-btn" (click)="deleteUser(user.id)">Delete</button>
+        </ng-template>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>

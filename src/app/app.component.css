@@ -1,0 +1,64 @@
+.toolbar {
+  background: linear-gradient(90deg, #2196f3, #21cbf3); /* Gradient for a modern look */
+  color: white;
+  height: 64px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.app-title {
+  font-size: 1.75rem; /* Larger font size for better prominence */
+  font-weight: 700; /* Slightly bolder font weight */
+  text-transform: capitalize; /* Capitalize first letter of each word */
+}
+
+.spacer {
+  flex: 1;
+}
+
+.toolbar-button {
+  font-size: 1.1rem; /* Slightly larger font size */
+  font-weight: 500;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: transparent;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.toolbar-button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05); /* Subtle scaling effect */
+}
+
+.logout {
+  background-color: #d32f2f; /* Red for Logout */
+  color: white;
+  margin-left: 16px;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.logout:hover {
+  background-color: #c62828; /* Darker red on hover */
+  transform: scale(1.05); /* Subtle scaling effect */
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .toolbar {
+    flex-direction: column;
+    height: auto;
+    padding: 16px;
+  }
+
+  .toolbar-button {
+    margin: 8px 0;
+    width: 100%;
+    text-align: center;
+  }
+}

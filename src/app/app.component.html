@@ -1,0 +1,18 @@
+<mat-toolbar color="primary" class="toolbar">
+  <span class="app-title">Nagarro Task Manager</span>
+  <span class="spacer"></span>
+  
+  <ng-container *ngIf="authService.isLoggedIn(); else loginButtons">
+    <button mat-button class="toolbar-button" routerLink="/tasks">Tasks</button>
+    <button mat-button class="toolbar-button" routerLink="/profile">Profile</button>
+    <button mat-button class="toolbar-button" *ngIf="authService.isAdmin()" routerLink="/admin">Admin Dashboard</button>
+    <button mat-button class="toolbar-button logout" (click)="logout()">Logout</button>
+  </ng-container>
+  
+  <ng-template #loginButtons>
+    <button mat-button class="toolbar-button" routerLink="/login">Login</button>
+    <button mat-button class="toolbar-button" routerLink="/register">Register</button>
+  </ng-template>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

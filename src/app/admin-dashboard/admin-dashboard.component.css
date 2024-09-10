@@ -1,0 +1,77 @@
+.admin-dashboard-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.dashboard-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+mat-card {
+  width: 45%;
+}
+
+.charts-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.charts-container canvas {
+  width: 45%;
+}
+
+table {
+  width: 100%;
+}
+
+/* Button Styles */
+button {
+  margin: 5px;
+  padding: 10px 15px;
+  border-radius: 8px; /* Add rounded corners */
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button.edit-btn {
+  background-color: #007bff;
+}
+
+button.edit-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+button.delete-btn {
+  background-color: #dc3545;
+}
+
+button.delete-btn:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
+
+button.save-btn {
+  background-color: #28a745;
+}
+
+button.save-btn:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+button.cancel-btn {
+  background-color: #6c757d;
+}
+
+button.cancel-btn:hover {
+  background-color: #5a6268;
+  transform: scale(1.05);
+}

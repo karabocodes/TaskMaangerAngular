@@ -1,0 +1,21 @@
+mat-form-field {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .categories-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .category-item {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+    background-color: #e0e0e0;
+    border-radius: 16px;
+  }
+  .category-item mat-icon {
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 8px;
+  }

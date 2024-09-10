@@ -1,0 +1,35 @@
+.login-container {
+  max-width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+button[type="submit"] {
+  width: 100%;
+}
+
+/* Adjust icon positioning */
+mat-icon[matPrefix] {
+  margin-right: 8px;
+}
+
+/* Ensure the visibility toggle doesn't push other elements */
+mat-form-field mat-icon[matSuffix] {
+  cursor: pointer;
+}
+
+/* Add some space between icon and input in the password field */
+input[name="password"] {
+  padding-right: 40px;
+}

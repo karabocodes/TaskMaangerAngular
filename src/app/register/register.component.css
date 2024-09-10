@@ -1,0 +1,69 @@
+.register-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+  }
+  
+  .form-title {
+    color: #6200ee;
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 24px;
+  }
+  
+  .form-field {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #6200ee;
+  }
+  
+  .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: #4caf50;
+  }
+  
+  .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
+    color: #f44336;
+  }
+  
+  .mat-error {
+    color: #f44336;
+  }
+  
+  .mat-hint {
+    color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .submit-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    margin-top: 24px;
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .submit-button:hover {
+    background-color: #45a049;
+  }
+  
+  .submit-button:disabled {
+    background-color: #cccccc;
+    color: #666666;
+  }
+  
+  .mat-icon {
+    color: #6200ee;
+  }
+  
+  /* New style for password toggle button */
+  .mat-form-field-suffix button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }

@@ -1,0 +1,48 @@
+<form (ngSubmit)="onSubmit()" #registerForm="ngForm" class="register-container">
+  <h2 class="form-title">Register</h2>
+
+  <mat-form-field appearance="outline" class="form-field">
+    <mat-label>Username</mat-label>
+    <input matInput [(ngModel)]="username" name="username" required minlength="3" #usernameInput="ngModel">
+    <mat-icon matSuffix>person</mat-icon>
+    <mat-hint>Must be at least 3 characters long</mat-hint>
+    <mat-error *ngIf="usernameInput.invalid && (usernameInput.dirty || usernameInput.touched)">
+      <span *ngIf="usernameInput.errors?.['required']">Username is required</span>
+      <span *ngIf="usernameInput.errors?.['minlength']">Username must be at least 3 characters long</span>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="form-field">
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="email" name="email" required email #emailInput="ngModel">
+    <mat-icon matSuffix>email</mat-icon>
+    <mat-hint>Enter a valid email address</mat-hint>
+    <mat-error *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)">
+      <span *ngIf="emailInput.errors?.['required']">Email is required</span>
+      <span *ngIf="emailInput.errors?.['email']">Invalid email format</span>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="form-field">
+    <mat-label>Password</mat-label>
+    <!-- <input matInput [(ngModel)]="password" name="password" required minlength="8" 
+           pattern="(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])" [type]="hidePassword ? 'password' : 'text'" #passwordInput="ngModel"> -->
+
+    <input matInput [(ngModel)]="password" name="password" required minlength="8" 
+           pattern="(?=.*[A-Z])(?=.*[0-9])(?=.*[\W_]).{8,}" [type]="hidePassword ? 'password' : 'text'" #passwordInput="ngModel">
+    
+    <button mat-icon-button matSuffix (click)="togglePasswordVisibility()" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+      <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+    <mat-hint>Must be at least 8 characters with 1 uppercase, 1 number, and 1 special character</mat-hint>
+    <mat-error *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)">
+      <span *ngIf="passwordInput.errors?.['required']">Password is required</span>
+      <span *ngIf="passwordInput.errors?.['minlength']">Password must be at least 8 characters long</span>
+      <span *ngIf="passwordInput.errors?.['pattern']">Password must contain an uppercase letter, a number, and a special character</span>
+    </mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="!registerForm.form.valid" class="submit-button">
+    <mat-icon>person_add</mat-icon> Register
+  </button>
+</form>

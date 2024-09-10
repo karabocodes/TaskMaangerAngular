@@ -1,0 +1,38 @@
+.profile-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.profile-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.profile-info,
+.change-password {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+button[type="submit"] {
+  align-self: flex-start;
+  margin-top: 10px;
+}
+
+.delete-account {
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .profile-content {
+    flex-direction: column;
+  }
+}

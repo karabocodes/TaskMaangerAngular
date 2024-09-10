@@ -1,0 +1,27 @@
+<div class="login-container">
+  <h2>Login</h2>
+  <form (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Username</mat-label>
+      <input matInput type="text" name="username" [(ngModel)]="username" required minlength="3" #usernameInput="ngModel">
+      <mat-icon matPrefix>person</mat-icon>
+      <mat-error *ngIf="usernameInput.errors?.['required']">Username is required</mat-error>
+      <mat-error *ngIf="usernameInput.errors?.['minlength']">Username must be at least 3 characters long</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput [type]="hidePassword ? 'password' : 'text'" name="password" [(ngModel)]="password" required minlength="8" #passwordInput="ngModel">
+      <mat-icon matPrefix>lock</mat-icon>
+      <button mat-icon-button matSuffix (click)="togglePasswordVisibility()" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword" type="button">
+        <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error *ngIf="passwordInput.errors?.['required']">Password is required</mat-error>
+      <mat-error *ngIf="passwordInput.errors?.['minlength']">Password must be at least 8 characters long</mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.form.valid">
+      <mat-icon>login</mat-icon> Login
+    </button>
+  </form>
+</div>
